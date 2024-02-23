@@ -8,6 +8,12 @@ mkcdir ()
        cd -P -- "$1"
 }
 
+# history
+HISTFILE=~/.config/zsh/.history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
