@@ -1,5 +1,6 @@
 # aliases
 alias la="ls -alh"
+alias ssha='eval $(ssh-agent) && ssh-add'
 
 # functions
 mkcdir ()
