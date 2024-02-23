@@ -1,44 +1,43 @@
 return {
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    opts = {
-      theme = "dragon",
-      colors = {
-        palette = {
-          dragonBlack3 = "#000000",
-          dragonBlack4 = "#0c0c0c",
-          dragonBlack5 = "#0d0d0d",
-          dragonBlack6 = "#393836",
-        },
-        theme = {
-          dragon = {
-            ui = {
-              bg_gutter = "none",
-              whitespace = "#0a0a0a",
-              pmenu = {
-                bg = "#0ff0ff",
-              },
-              float = {
-                bg = "#000000",
-                bg_border = "#000000",
-              },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        enabled = false,
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        opts = {
+            theme = "dragon",
+            colors = {
+                theme = {
+                    all = {
+                        ui = {
+                            bg = "none",
+                            bg_p2 = "none",
+                            bg_gutter = "none",
+                            float = { bg = "none", bg_border = "none" },
+                        },
+                    },
+                },
             },
-          },
+            overrides = function(colors)
+                require("notify").setup({
+                    background_colour = "#000000",
+                })
+                require("treesitter-context").setup({ separator = "-" })
+                return {
+                    TreesitterContext = { bg = "none" },
+                    TreesitterContextSeparator = { fg = colors.palette.dragonBlack4 },
+                    Visual = { bg = colors.palette.dragonBlack6 },
+                    WinSeparator = { fg = colors.palette.dragonBlack6 },
+                }
+            end,
         },
-      },
-      overrides = function(colors)
-        return {
-          -- NormalFloat = { bg = "#ff0000" },
-          Visual = { bg = colors.palette.dragonBlack2 },
-        }
-      end,
     },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "kanagawa-dragon",
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "kanagawa-dragon",
+        },
     },
-  },
 }

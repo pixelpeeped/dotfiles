@@ -1,10 +1,11 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  opts = {
-    window = {
-      mappings = {
-        ["l"] = "open",
-      },
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+        window = {
+            mappings = {
+                ["l"] = "open",
+            },
+        },
     },
-  },
+    init = function() end,
 }
