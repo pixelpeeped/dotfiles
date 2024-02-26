@@ -4,6 +4,7 @@ return {
         diagnostics = {
             underline = false,
             virtual_text = false,
+            float = { border = "single" },
         },
     },
     init = function()
